@@ -1,0 +1,42 @@
+ALGORITHM prceProg
+VAR
+scal : INTEGER;
+BEGIN
+    set_instructions
+END
+/*-----------------------------------------function ----------------------------------------------------------*/
+FUNCTION dot_product(v1,v2 :ARRAY_OF INTEGER[]) : INTEGER
+VAR
+    scaler,i : INTEGER;
+BEGIN
+    if (v1.length==v2.length)
+        {
+            FOR i FROM 0 TO v1.length STEP 1  DO
+                    scaler:+=v1[i]*v2[i]  
+            END_FOR
+
+        }
+    else
+        {
+            
+            write("check vectors dimonsions")
+        }
+    RETURN   scaler
+END
+/*----------------------------------------------procedure-------------------------------------------------------*/
+PROCEDURE dot_product(var scal,v1,v2 :ARRAY_OF INTEGER[] )
+VAR
+    i,j :INTEGER;
+BEGIN
+    write("type your vectors like [[v1],[v2]...[vn]]");
+    read(V)
+    FOR i FROM 0 TO v.length STEP 1  DO
+        FOR j FROM i+1 TO v.length STEP 1  DO
+            if(dot_product(v[i],v[j])===0)
+            {
+                write(v[i],"and",v[j],"are orthogonal");
+            }
+        END_FOR
+    END_FOR
+    
+END
